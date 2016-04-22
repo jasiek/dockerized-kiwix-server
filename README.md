@@ -10,3 +10,6 @@ dockerized-kiwix-server
 ```
 docker run -v /tmp/wiki:/kiwix-data -p 8080:8080 jasiek/kiwix-server
 ```
+
+![wikipedia1.png](snaps/wikipedia1.png)
+![wikipedia2.png](snaps/wikipedia2.png)
