@@ -1,11 +1,11 @@
 FROM ubuntu:latest
 MAINTAINER Jan Szumiec <jan.szumiec@gmail.com>
 RUN apt-get update
-RUN apt-get -y install wget
+RUN apt-get -y install wget bzip2
 WORKDIR /kiwix
-RUN wget http://download.kiwix.org/bin/kiwix-linux-x86_64.tar.bz2
-RUN bzip2 -d kiwix-linux-x86_64.tar.bz2
-RUN tar -xvf kiwix-linux-x86_64.tar
+RUN wget -q http://download.kiwix.org/bin/kiwix-linux-x86_64.tar.bz2
+RUN tar -xjf kiwix-linux-x86_64.tar.bz2
+RUN rm kiwix-linux-x86_64.tar.bz2
 WORKDIR kiwix
 VOLUME /kiwix-data
 EXPOSE 8080
